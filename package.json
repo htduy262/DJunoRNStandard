@@ -6,14 +6,26 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "clean": "rimraf node_modules && rimraf package-lock.json && rimraf yarn.lock && yarn cache clean",
-    "i-clean": "cd ios && pod deintegrate && pod cache clean --all && pod install && cd .."
+    "i-clean": "cd ios && pod deintegrate && pod cache clean --all && pod install && cd ..",
+    "pod": "npx pod-install ios",
+    "pull": "git pull origin master",
+    "a-device-relink-metro": "adb reverse tcp:8081 tcp:8081",
+    "test": "TZ=utc jest --coverage --forceExit -i"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^6.4.0",
+    "@react-navigation/material-top-tabs": "^6.3.0",
+    "@react-navigation/native": "^6.0.13",
+    "@react-navigation/stack": "^6.3.3",
     "react": "18.1.0",
-    "react-native": "0.70.3"
+    "react-native": "0.70.3",
+    "react-native-gesture-handler": "^2.8.0",
+    "react-native-pager-view": "^6.0.1",
+    "react-native-safe-area-context": "^4.4.1",
+    "react-native-screens": "^3.18.2",
+    "react-native-tab-view": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
