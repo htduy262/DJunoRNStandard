@@ -1,12 +1,11 @@
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import React from 'react';
-import {Text} from 'react-native';
 import SafeArea from '../../components/SafeArea';
+import TopTabBarLabel from '../../components/TopTabBarLabel';
 import {screenEnum} from '../../enums/screenEnum';
 import PrintMediaScreen from '../../features/print/screens/print-media.screen';
 import PrintOfficeScreen from '../../features/print/screens/print-office.screen';
 import {colors} from '../theme/colors';
-import {fontSizes} from '../theme/fonts';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -20,15 +19,6 @@ const TAB_INFO = {
   [screenEnum.printPackage.toString()]: {
     label: 'IN ẤN BAO BÌ',
   },
-  [screenEnum.printTetCalendar.toString()]: {
-    label: 'IN ẤN LỊCH TẾT',
-  },
-  [screenEnum.printAdvertising.toString()]: {
-    label: 'IN ẤN QUẢNG CÁO',
-  },
-  [screenEnum.printOthers.toString()]: {
-    label: 'IN ẤN KHÁC',
-  },
 };
 
 const createScreenOptions = ({route}: {route: {name: string}}) => {
@@ -39,16 +29,12 @@ const createScreenOptions = ({route}: {route: {name: string}}) => {
     },
     tabBarScrollEnabled: true,
     tabBarLabel: ({color}: {color: string}) => {
-      return (
-        <Text style={{color, fontSize: fontSizes.caption, fontWeight: 'bold'}}>
-          {tabBarLabel}
-        </Text>
-      );
+      return <TopTabBarLabel tabBarLabel={tabBarLabel} color={color} />;
     },
   };
 };
 
-export const PrintNavigator = () => {
+export const DesignNavigator = () => {
   return (
     <SafeArea>
       <Tab.Navigator screenOptions={createScreenOptions}>
@@ -63,14 +49,6 @@ export const PrintNavigator = () => {
         />
         <Tab.Screen
           name={screenEnum.printTetCalendar}
-          component={PrintMediaScreen}
-        />
-        <Tab.Screen
-          name={screenEnum.printAdvertising}
-          component={PrintMediaScreen}
-        />
-        <Tab.Screen
-          name={screenEnum.printOthers}
           component={PrintMediaScreen}
         />
       </Tab.Navigator>

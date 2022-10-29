@@ -2,14 +2,14 @@ import {Text} from 'react-native';
 import React from 'react';
 import SafeArea from '../../../components/SafeArea';
 
-const HomeScreen = () => {
+const MoreScreen = () => {
   return (
     <SafeArea>
-      <Text>Home</Text>
+      <Text>More</Text>
     </SafeArea>
   );
 };
 
-export default HomeScreen;
+export default MoreScreen;
 
 // const styles = StyleSheet.create({});
