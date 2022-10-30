@@ -1,1 +1,8 @@
-export const sizes = [8, 16, 20, 32, 64, 128];
+export const sizes = {
+  smallX: 2,
+  small: 4,
+  medium: 8,
+  large: 16,
+  largeX: 20,
+  largeXX: 32,
+};
