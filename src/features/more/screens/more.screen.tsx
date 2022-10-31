@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import SafeArea from '../../../components/SafeArea';
+import SafeArea from '../../../components/safe-area/safe-area.component';
 import {ButtonGroup} from 'react-native-elements';
 import {useTranslation} from 'react-i18next';
 import {colors} from '../../../infrastructure/theme/colors';
 import {ScrollView, StyleSheet} from 'react-native';
-import InformationRow from '../../../components/InformationRow';
+import InformationRow from '../../../components/information-row/information-row.component';
 import {spacing} from '../../../infrastructure/theme/spacings';
 
 const MoreScreen = () => {

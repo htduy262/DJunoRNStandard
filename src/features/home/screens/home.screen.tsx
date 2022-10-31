@@ -2,7 +2,7 @@ import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {ActivityIndicator, ScrollView, StyleSheet, View} from 'react-native';
 import {Button, Image} from 'react-native-elements';
-import SafeArea from '../../../components/SafeArea';
+import SafeArea from '../../../components/safe-area/safe-area.component';
 import {colors} from '../../../infrastructure/theme/colors';
 import {fontSizes} from '../../../infrastructure/theme/fonts';
 import {spacing} from '../../../infrastructure/theme/spacings';

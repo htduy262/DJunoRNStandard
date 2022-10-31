@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text} from 'react-native';
-import {fontSizes} from '../infrastructure/theme/fonts';
+import {fontSizes} from '../../infrastructure/theme/fonts';
 
 const TopTabBarLabel = ({
   tabBarLabel,
