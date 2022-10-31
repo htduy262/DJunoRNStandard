@@ -80,5 +80,5 @@ export const MainStackNavigator = () => {
 };
 
 const styles = StyleSheet.create({
-  tabBarLabelStyles: {fontSize: fontSizes.caption, fontWeight: 'bold'},
+  tabBarLabelStyles: {fontSize: fontSizes.body, fontWeight: 'bold'},
 });

@@ -3,6 +3,6 @@ export const sizes = {
   small: 4,
   medium: 8,
   large: 16,
-  largeX: 20,
+  largeX: 22,
   largeXX: 32,
 };

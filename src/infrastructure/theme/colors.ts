@@ -13,10 +13,6 @@ export const colors = {
     //   error: "#D0421B",
     //   success: "#138000",
   },
-  bg: {
-    // primary: '#FFFFFF',
-    // secondary: '#F1F1F1',
-  },
   text: {
     primary: '#232A51',
     // secondary: '#757575',
