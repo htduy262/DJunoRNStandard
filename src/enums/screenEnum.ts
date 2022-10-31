@@ -12,6 +12,14 @@ export enum screenEnum {
   //#endregion
   //#region print
   design = 'design', // Thiet ke
+  designLogo = 'designLogo',
+  designBrandIdentify = 'designBrandIdentify',
+  designSalesKitRealEstateProject = 'designSalesKitRealEstateProject',
+  designPublicationsOffice = 'designPublicationsOffice',
+  designPublicationsPackaging = 'designPublicationsPackaging',
+  designPublicationsEventing = 'designPublicationsEventing',
+  designPublicationsMedia = 'designPublicationsMedia',
+  designPublicationsFurniture = 'designPublicationsFurniture',
   //#endregion
   //#region more
   more = 'more', // Them > Tin tuc, Du an, Gioi thieu

@@ -96,21 +96,201 @@ const HomeScreen = () => {
         <CarouselSectionHeader
           title={t('labels.printingOffice').toUpperCase()}
         />
+        <CarouselSection>
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'Phong bi giay Kraft'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'In ấn mẫu lịch để bàn năm 2023'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'Phong bi giay Kraft'}
+            buttonTitle={'Đặt in ngay'}
+          />
+        </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingMedia').toUpperCase()}
         />
+        <CarouselSection>
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'Phong bi giay Kraft'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'In ấn mẫu lịch để bàn năm 2023'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'Phong bi giay Kraft'}
+            buttonTitle={'Đặt in ngay'}
+          />
+        </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingPackaging').toUpperCase()}
         />
+        <CarouselSection>
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'Phong bi giay Kraft'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'In ấn mẫu lịch để bàn năm 2023'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'Phong bi giay Kraft'}
+            buttonTitle={'Đặt in ngay'}
+          />
+        </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingTetCalendar').toUpperCase()}
         />
+        <CarouselSection>
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'Phong bi giay Kraft'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'In ấn mẫu lịch để bàn năm 2023'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'Phong bi giay Kraft'}
+            buttonTitle={'Đặt in ngay'}
+          />
+        </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingAdvertising').toUpperCase()}
         />
+        <CarouselSection>
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'Phong bi giay Kraft'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'In ấn mẫu lịch để bàn năm 2023'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'Phong bi giay Kraft'}
+            buttonTitle={'Đặt in ngay'}
+          />
+        </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingOther').toUpperCase()}
         />
+        <CarouselSection>
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'Phong bi giay Kraft'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'In ấn mẫu lịch để bàn năm 2023'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
+            buttonTitle={'Đặt in ngay'}
+          />
+          <ProductCard
+            imageUrl={
+              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
+            }
+            title={'Phong bi giay Kraft'}
+            buttonTitle={'Đặt in ngay'}
+          />
+        </CarouselSection>
       </ScrollView>
       <View style={[styles.header, {top: insets.top}]}>
         <View style={styles.logo}>

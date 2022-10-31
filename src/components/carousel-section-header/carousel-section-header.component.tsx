@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'yellow',
     marginVertical: spacing.medium,
     marginHorizontal: spacing.medium,
-    paddingBottom: 1,
+    paddingBottom: 2,
     borderBottomWidth: 0.5,
     borderBottomColor: colors.ui.primary,
     flexDirection: 'row',
