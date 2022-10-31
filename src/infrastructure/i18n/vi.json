@@ -7,6 +7,14 @@
     "viet": "Việt",
     "eng": "Anh",
     "language": "Ngôn Ngữ",
-    "getAQuote": "Nhận Báo Giá"
+    "getAQuote": "Nhận Báo Giá",
+    "featuredPublications": "Ấn phẩm nổi bật",
+    "printingOffice": "In ấn văn phòng",
+    "printingMedia": "In ấn truyền thông",
+    "printingPackaging": "In ấn bao bì",
+    "printingTetCalendar": "In ấn lịch Tết",
+    "printingAdvertising": "In ấn quảng cáo",
+    "printingOther": "In ấn khác",
+    "seeAll": "Xem tất cả"
   }
 }
