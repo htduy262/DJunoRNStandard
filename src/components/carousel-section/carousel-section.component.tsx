@@ -19,6 +19,6 @@ const styles = StyleSheet.create({
   container: {
     // backgroundColor: 'yellow',
     paddingHorizontal: spacing.medium,
-    marginVertical: spacing.small,
+    marginVertical: spacing.smallX,
   },
 });

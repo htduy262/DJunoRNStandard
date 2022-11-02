@@ -1,3 +1,4 @@
+import {useScrollToTop} from '@react-navigation/native';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {ActivityIndicator, ScrollView, StyleSheet, View} from 'react-native';
@@ -5,8 +6,11 @@ import {Button, Image} from 'react-native-elements';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import CarouselSectionHeader from '../../../components/carousel-section-header/carousel-section-header.component';
 import CarouselSection from '../../../components/carousel-section/carousel-section.component';
+import LinkButton from '../../../components/link-button/link-button.component';
+import PostCard from '../../../components/post-card/post-card.component';
 import ProductCard from '../../../components/product-card/product-card.component';
 import SafeArea from '../../../components/safe-area/safe-area.component';
+import SectionHeaderTitle from '../../../components/section-header-title/section-header-title.component';
 import {Spacer} from '../../../components/spacer/spacer.component';
 import {colors} from '../../../infrastructure/theme/colors';
 import {fontSizes} from '../../../infrastructure/theme/fonts';
@@ -16,9 +20,13 @@ const HomeScreen = () => {
   const insets = useSafeAreaInsets();
   const {t} = useTranslation();
 
+  const scrollViewRef = React.useRef(null);
+  useScrollToTop(scrollViewRef);
+
   return (
     <SafeArea style={styles.container}>
       <ScrollView
+        ref={scrollViewRef}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollViewContainer}>
         <View style={styles.bannerContainer}>
@@ -28,7 +36,7 @@ const HomeScreen = () => {
             source={{
               uri: 'https://inanbinhduong.vn/Content/images/slider/20221006/slider1234.jpg',
             }}
-            containerStyle={styles.bannerImage}
+            containerStyle={styles.image}
             PlaceholderContent={<ActivityIndicator />}
             resizeMode="contain"
           />
@@ -49,7 +57,7 @@ const HomeScreen = () => {
               resizeMode="contain"
             />
           </View>
-          <Spacer left={spacing.small} />
+          <Spacer left={spacing.smallX} />
           <View style={styles.imageButtonContainer}>
             <Image
               height={1}
@@ -69,28 +77,28 @@ const HomeScreen = () => {
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
         </CarouselSection>
         <CarouselSectionHeader
@@ -102,28 +110,28 @@ const HomeScreen = () => {
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
         </CarouselSection>
         <CarouselSectionHeader
@@ -135,28 +143,28 @@ const HomeScreen = () => {
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
         </CarouselSection>
         <CarouselSectionHeader
@@ -168,28 +176,28 @@ const HomeScreen = () => {
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
         </CarouselSection>
         <CarouselSectionHeader
@@ -201,28 +209,28 @@ const HomeScreen = () => {
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
         </CarouselSection>
         <CarouselSectionHeader
@@ -234,28 +242,28 @@ const HomeScreen = () => {
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
         </CarouselSection>
         <CarouselSectionHeader
@@ -267,30 +275,74 @@ const HomeScreen = () => {
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
           <ProductCard
             imageUrl={
               'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
             }
             title={'Phong bi giay Kraft'}
-            buttonTitle={'Đặt in ngay'}
+            buttonTitle={t('labels.bookPrintingNow')}
           />
         </CarouselSection>
+        <Spacer top={spacing.medium} />
+        <View style={styles.newsSectionContainer}>
+          <Spacer top={spacing.medium} />
+          <View style={styles.rowSection}>
+            <SectionHeaderTitle title={t('labels.newPost')} />
+            <LinkButton
+              title={`→ ${t('labels.seeMore').toLocaleUpperCase()}`}
+            />
+          </View>
+          <Spacer top={spacing.medium} />
+          <PostCard
+            title={
+              'NHỮNG CHẤT LIỆU THƯỜNG ĐƯỢC SỬ DỤNG ĐỂ THIẾT KẾ IN ẤN KẸP FILE'
+            }
+            subTitle={'By Tiểu Mụi / October 31'}
+            label={'Wiki Printing'}
+            description={
+              'Kẹp file hồ sơ đang dần trở thành yếu tố quan trọng trong bộ nhận diên thương hiệu của doanh nghiệp. Nó hỗ trợ doanh nghiệp trong việc cung cấp thông tin, truyền tải thông điệp đến khách hàng, đối tác. Chất liệu in kẹp file luôn được lựa chọn cẩn thận, hãy cùng tìm hiểu về những chất liệu được sử dụng nhiều nhất hiện nay.'
+            }
+            buttonTitle={'Đọc tiếp'}
+          />
+          <PostCard
+            title={
+              'NHỮNG CHẤT LIỆU THƯỜNG ĐƯỢC SỬ DỤNG ĐỂ THIẾT KẾ IN ẤN KẸP FILE'
+            }
+            subTitle={'By Tiểu Mụi / October 31'}
+            label={'Wiki Printing'}
+            description={
+              'Kẹp file hồ sơ đang dần trở thành yếu tố quan trọng trong bộ nhận diên thương hiệu của doanh nghiệp. Nó hỗ trợ doanh nghiệp trong việc cung cấp thông tin, truyền tải thông điệp đến khách hàng, đối tác. Chất liệu in kẹp file luôn được lựa chọn cẩn thận, hãy cùng tìm hiểu về những chất liệu được sử dụng nhiều nhất hiện nay.'
+            }
+            buttonTitle={'Đọc tiếp'}
+          />
+          <PostCard
+            title={
+              'NHỮNG CHẤT LIỆU THƯỜNG ĐƯỢC SỬ DỤNG ĐỂ THIẾT KẾ IN ẤN KẸP FILE'
+            }
+            subTitle={'By Tiểu Mụi / October 31'}
+            label={'Wiki Printing'}
+            description={
+              'Kẹp file hồ sơ đang dần trở thành yếu tố quan trọng trong bộ nhận diên thương hiệu của doanh nghiệp. Nó hỗ trợ doanh nghiệp trong việc cung cấp thông tin, truyền tải thông điệp đến khách hàng, đối tác. Chất liệu in kẹp file luôn được lựa chọn cẩn thận, hãy cùng tìm hiểu về những chất liệu được sử dụng nhiều nhất hiện nay.'
+            }
+            buttonTitle={'Đọc tiếp'}
+          />
+        </View>
       </ScrollView>
       <View style={[styles.header, {top: insets.top}]}>
         <View style={styles.logo}>
@@ -300,7 +352,7 @@ const HomeScreen = () => {
             source={{
               uri: 'https://inanbinhduong.vn/Content/images/logo/logo-in-an-binh-duong.png',
             }}
-            containerStyle={{flex: 1}}
+            containerStyle={styles.image}
             PlaceholderContent={<ActivityIndicator />}
             resizeMode="contain"
           />
@@ -324,12 +376,15 @@ const styles = StyleSheet.create({
   scrollViewContainer: {
     backgroundColor: '#fff',
     marginTop: 65,
-    paddingBottom: 200,
+    paddingBottom: 150,
   },
   rowSection: {
+    // backgroundColor: 'green',
     flex: 1,
     flexDirection: 'row',
     padding: spacing.medium,
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   header: {
     position: 'absolute',
@@ -359,7 +414,7 @@ const styles = StyleSheet.create({
     height: 148,
     backgroundColor: colors.ui.primary,
   },
-  bannerImage: {
+  image: {
     flex: 1,
     width: '100%',
   },
@@ -379,5 +434,9 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     fontSize: fontSizes.button,
     fontWeight: 'bold',
+  },
+  newsSectionContainer: {
+    flex: 1,
+    backgroundColor: colors.ui.tertiary,
   },
 });

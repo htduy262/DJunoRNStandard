@@ -16,7 +16,7 @@ const MoreScreen = () => {
     <SafeArea>
       <ScrollView style={styles.container}>
         <InformationRow
-          infoLabel={t('labels.language')}
+          infoLabel={t('labels.language').toLocaleUpperCase()}
           leftControl={
             <ButtonGroup
               buttons={[

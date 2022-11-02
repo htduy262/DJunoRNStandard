@@ -5,14 +5,14 @@ export const fontWeights = {
 };
 
 export const fontSizes = {
-  smallButton: 8,
+  smallButton: 10,
+  button: 12,
   caption: 10,
   body: 12,
-  button: 12,
-  title: 16,
-  h5: 12,
-  h4: 16,
-  h3: 20,
-  h2: 24,
-  h1: 30,
+  title: 14,
+  h5: 10,
+  h4: 12,
+  h3: 14,
+  h2: 16,
+  h1: 18,
 };

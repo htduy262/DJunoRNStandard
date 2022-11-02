@@ -7,10 +7,10 @@ import {colors} from '../../infrastructure/theme/colors';
 import {sizes} from '../../infrastructure/theme/sizes';
 
 const ProductCard = ({
-  imageUrl,
-  //   imageTagLabel,
-  title,
-  buttonTitle,
+  imageUrl = 'imageUrl',
+  // imageTagLabel = 'imageTagLabel',
+  title = 'title',
+  buttonTitle = 'buttonTitle',
   onButtonPress,
 }: {
   imageUrl: string;
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     fontSize: fontSizes.caption,
     color: colors.text.primary,
     fontWeight: '500',
-    padding: spacing.small,
+    padding: spacing.smallX,
   },
   buttonTitle: {
     fontSize: fontSizes.smallButton,
@@ -76,12 +76,12 @@ const styles = StyleSheet.create({
     color: colors.ui.primary,
   },
   button: {
-    marginHorizontal: spacing.small,
-    marginBottom: spacing.small,
+    marginHorizontal: spacing.smallX,
+    marginBottom: spacing.smallX,
     borderRadius: sizes.medium,
     borderColor: colors.ui.secondary,
     borderWidth: 0.3,
-    padding: spacing.smallX,
+    padding: spacing.smallXX,
     margin: 0,
   },
   image: {

@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {fontSizes} from '../../infrastructure/theme/fonts';
 
 const InformationRow = ({
-  infoLabel,
+  infoLabel = 'infoLabel',
   valueLabel,
   leftControl,
 }: {

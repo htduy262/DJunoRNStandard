@@ -7,7 +7,7 @@ import {Button} from 'react-native-elements';
 import {useTranslation} from 'react-i18next';
 
 const CarouselSectionHeader = ({
-  title,
+  title = 'title',
   onButtonPress,
 }: {
   title: string;
@@ -22,6 +22,7 @@ const CarouselSectionHeader = ({
         title={`> ${t('labels.seeAll').toUpperCase()}`}
         type="clear"
         titleStyle={styles.buttonTitle}
+        buttonStyle={styles.button}
         onPress={onButtonPress}
       />
     </View>
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    paddingVertical: spacing.medium,
+    paddingVertical: spacing.small,
     paddingHorizontal: spacing.medium,
     backgroundColor: colors.ui.primary,
     fontSize: fontSizes.caption,
@@ -54,5 +55,8 @@ const styles = StyleSheet.create({
     fontSize: fontSizes.smallButton,
     fontWeight: '800',
     color: '#000',
+  },
+  button: {
+    padding: 0,
   },
 });
