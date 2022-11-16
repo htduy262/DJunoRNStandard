@@ -17,7 +17,7 @@ const ProductCard = ({
   //   imageTagLabel: string;
   title: string;
   buttonTitle: string;
-  onButtonPress?: () => {};
+  onButtonPress?: () => void;
 }) => {
   return (
     <View style={styles.container}>

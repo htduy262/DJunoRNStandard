@@ -21,7 +21,7 @@ const PostCard = ({
   label?: string;
   description?: string;
   buttonTitle: string;
-  onButtonPress?: () => {};
+  onButtonPress?: () => void;
 }) => {
   return (
     <View style={styles.container}>

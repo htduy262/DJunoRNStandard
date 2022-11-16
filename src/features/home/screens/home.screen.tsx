@@ -1,4 +1,8 @@
-import {useScrollToTop} from '@react-navigation/native';
+import {
+  NavigationProp,
+  useNavigation,
+  useScrollToTop,
+} from '@react-navigation/native';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {ActivityIndicator, ScrollView, StyleSheet, View} from 'react-native';
@@ -12,6 +16,7 @@ import ProductCard from '../../../components/product-card/product-card.component
 import SafeArea from '../../../components/safe-area/safe-area.component';
 import SectionHeaderTitle from '../../../components/section-header-title/section-header-title.component';
 import {Spacer} from '../../../components/spacer/spacer.component';
+import {screenEnum} from '../../../enums/screenEnum';
 import {colors} from '../../../infrastructure/theme/colors';
 import {fontSizes} from '../../../infrastructure/theme/fonts';
 import {spacing} from '../../../infrastructure/theme/spacings';
@@ -22,6 +27,8 @@ const HomeScreen = () => {
 
   const scrollViewRef = React.useRef(null);
   useScrollToTop(scrollViewRef);
+
+  const navigation = useNavigation<NavigationProp<any>>();
 
   return (
     <SafeArea style={styles.container}>
@@ -103,6 +110,9 @@ const HomeScreen = () => {
         </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingOffice').toUpperCase()}
+          onButtonPress={() => {
+            navigation.navigate(screenEnum.printOffice);
+          }}
         />
         <CarouselSection>
           <ProductCard
@@ -136,6 +146,9 @@ const HomeScreen = () => {
         </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingMedia').toUpperCase()}
+          onButtonPress={() => {
+            navigation.navigate(screenEnum.printMedia);
+          }}
         />
         <CarouselSection>
           <ProductCard
@@ -169,6 +182,9 @@ const HomeScreen = () => {
         </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingPackaging').toUpperCase()}
+          onButtonPress={() => {
+            navigation.navigate(screenEnum.printPackage);
+          }}
         />
         <CarouselSection>
           <ProductCard
@@ -202,6 +218,9 @@ const HomeScreen = () => {
         </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingTetCalendar').toUpperCase()}
+          onButtonPress={() => {
+            navigation.navigate(screenEnum.printTetCalendar);
+          }}
         />
         <CarouselSection>
           <ProductCard
@@ -235,6 +254,9 @@ const HomeScreen = () => {
         </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingAdvertising').toUpperCase()}
+          onButtonPress={() => {
+            navigation.navigate(screenEnum.printAdvertising);
+          }}
         />
         <CarouselSection>
           <ProductCard
@@ -268,6 +290,9 @@ const HomeScreen = () => {
         </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingOther').toUpperCase()}
+          onButtonPress={() => {
+            navigation.navigate(screenEnum.printOthers);
+          }}
         />
         <CarouselSection>
           <ProductCard

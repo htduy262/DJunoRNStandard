@@ -11,7 +11,7 @@ const CarouselSectionHeader = ({
   onButtonPress,
 }: {
   title: string;
-  onButtonPress?: () => {};
+  onButtonPress?: () => void;
 }) => {
   const {t} = useTranslation();
 

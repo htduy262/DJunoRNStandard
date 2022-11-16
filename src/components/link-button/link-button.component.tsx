@@ -9,7 +9,7 @@ const LinkButton = ({
   onButtonPress,
 }: {
   title: string;
-  onButtonPress?: () => {};
+  onButtonPress?: () => void;
 }) => {
   return (
     <Button
