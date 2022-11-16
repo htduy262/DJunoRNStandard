@@ -2,7 +2,7 @@ import React, {createContext, ReactNode, useState} from 'react';
 import {requestHomeData} from './products.service';
 
 export const ProductsContext = createContext({
-  fetchHomeData: () => {},
+  fetchHomeData: async () => {},
   home: {} as any,
   print: {} as any,
   design: {} as any,
@@ -17,10 +17,18 @@ export const ProductsContextProvider = ({children}: {children: ReactNode}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchHomeData = () => {
-    requestHomeData().then((data: any) => {
-      setHome(data);
-    });
+  const fetchHomeData = async () => {
+    setIsLoading(true);
+    await requestHomeData()
+      .then((data: any) => {
+        setHome(data);
+      })
+      .catch(ex => {
+        setError(ex);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (

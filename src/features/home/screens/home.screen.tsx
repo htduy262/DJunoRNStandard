@@ -33,8 +33,10 @@ const HomeScreen = () => {
   }, [home]);
 
   useEffect(() => {
-    // Fetch data
-    fetchHomeData();
+    // Fetch data when homepage loaded
+    (async () => {
+      await fetchHomeData();
+    })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
