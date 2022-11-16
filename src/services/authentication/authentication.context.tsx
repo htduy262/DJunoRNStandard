@@ -9,11 +9,11 @@ export const AuthenticationContext = createContext({
   error: null,
 });
 
-interface Props {
-  children?: ReactNode;
-}
-
-export const AuthenticationContextProvider = ({children}: Props) => {
+export const AuthenticationContextProvider = ({
+  children,
+}: {
+  children: ReactNode;
+}) => {
   // const [isLoading, setIsLoading] = useState(false);
   // const [user, setUser] = useState(null);
   // const [error, setError] = useState(null);

@@ -1,16 +1,17 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
+import {useTranslation} from 'react-i18next';
+import {StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {screenEnum} from '../../enums/screenEnum';
 import HomeScreen from '../../features/home/screens/home.screen';
 import MoreScreen from '../../features/more/screens/more.screen';
+import {ProductsContextProvider} from '../../services/products/products.context';
 import {colors} from '../theme/colors';
 import {fontSizes} from '../theme/fonts';
 import {sizes} from '../theme/sizes';
 import {DesignNavigator} from './design.navigator';
 import {PrintNavigator} from './print.navigator';
-import {useTranslation} from 'react-i18next';
-import {StyleSheet} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -44,38 +45,40 @@ const createScreenOptions = ({route}: {route: {name: string}}) => {
 export const MainStackNavigator = () => {
   const {t} = useTranslation();
   return (
-    <Tab.Navigator screenOptions={createScreenOptions}>
-      <Tab.Group screenOptions={{headerShown: false}}>
-        <Tab.Screen
-          name={screenEnum.home}
-          component={HomeScreen}
-          options={{
-            tabBarLabel: t('labels.homepage').toString(),
-          }}
-        />
-        <Tab.Screen
-          name={screenEnum.print}
-          component={PrintNavigator}
-          options={{
-            tabBarLabel: t('labels.print').toString(),
-          }}
-        />
-        <Tab.Screen
-          name={screenEnum.design}
-          component={DesignNavigator}
-          options={{
-            tabBarLabel: t('labels.design').toString(),
-          }}
-        />
-        <Tab.Screen
-          name={screenEnum.more}
-          component={MoreScreen}
-          options={{
-            tabBarLabel: t('labels.more').toString(),
-          }}
-        />
-      </Tab.Group>
-    </Tab.Navigator>
+    <ProductsContextProvider>
+      <Tab.Navigator screenOptions={createScreenOptions}>
+        <Tab.Group screenOptions={{headerShown: false, lazy: false}}>
+          <Tab.Screen
+            name={screenEnum.home}
+            component={HomeScreen}
+            options={{
+              tabBarLabel: t('labels.homepage').toString(),
+            }}
+          />
+          <Tab.Screen
+            name={screenEnum.print}
+            component={PrintNavigator}
+            options={{
+              tabBarLabel: t('labels.print').toString(),
+            }}
+          />
+          <Tab.Screen
+            name={screenEnum.design}
+            component={DesignNavigator}
+            options={{
+              tabBarLabel: t('labels.design').toString(),
+            }}
+          />
+          <Tab.Screen
+            name={screenEnum.more}
+            component={MoreScreen}
+            options={{
+              tabBarLabel: t('labels.more').toString(),
+            }}
+          />
+        </Tab.Group>
+      </Tab.Navigator>
+    </ProductsContextProvider>
   );
 };
 

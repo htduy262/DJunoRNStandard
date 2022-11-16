@@ -1,0 +1,44 @@
+{
+  "printData": {
+    "featuredPublications": [
+      {
+        "id": 1,
+        "title": "Phong bi giay Kraft",
+        "imageUrl": "https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Phong bi giay Kraft",
+        "imageUrl": "https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Phong bi giay Kraft",
+        "imageUrl": "https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg"
+      }
+    ],
+    "printingOffice": [
+      {
+        "id": 1,
+        "title": "Phong bi giay Kraft",
+        "imageUrl": "https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Phong bi giay Kraft",
+        "imageUrl": "https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg"
+      }
+    ],
+    "printingMedia": [
+      {
+        "id": 1,
+        "title": "Phong bi giay Kraft",
+        "imageUrl": "https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg"
+      }
+    ],
+    "printingPackaging": [],
+    "printingTetCalendar": [],
+    "printingAdvertising": [],
+    "printingOther": []
+  }
+}

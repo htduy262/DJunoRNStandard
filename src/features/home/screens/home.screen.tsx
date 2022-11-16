@@ -3,7 +3,7 @@ import {
   useNavigation,
   useScrollToTop,
 } from '@react-navigation/native';
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import {useTranslation} from 'react-i18next';
 import {ActivityIndicator, ScrollView, StyleSheet, View} from 'react-native';
 import {Button, Image} from 'react-native-elements';
@@ -20,15 +20,26 @@ import {screenEnum} from '../../../enums/screenEnum';
 import {colors} from '../../../infrastructure/theme/colors';
 import {fontSizes} from '../../../infrastructure/theme/fonts';
 import {spacing} from '../../../infrastructure/theme/spacings';
+import {ProductsContext} from '../../../services/products/products.context';
 
 const HomeScreen = () => {
-  const insets = useSafeAreaInsets();
   const {t} = useTranslation();
+  const insets = useSafeAreaInsets();
+  const navigation = useNavigation<NavigationProp<any>>();
+  const {home, fetchHomeData} = useContext(ProductsContext);
+
+  useEffect(() => {
+    console.log('home', home);
+  }, [home]);
+
+  useEffect(() => {
+    // Fetch data
+    fetchHomeData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const scrollViewRef = React.useRef(null);
   useScrollToTop(scrollViewRef);
-
-  const navigation = useNavigation<NavigationProp<any>>();
 
   return (
     <SafeArea style={styles.container}>
@@ -79,34 +90,26 @@ const HomeScreen = () => {
           </View>
         </View>
         <CarouselSection>
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
+          {home?.printData?.featuredPublications?.map(
+            ({
+              id,
+              title,
+              imageUrl,
+            }: {
+              id: number;
+              title: string;
+              imageUrl: string;
+            }) => {
+              return (
+                <ProductCard
+                  key={id}
+                  imageUrl={imageUrl}
+                  title={title}
+                  buttonTitle={t('labels.bookPrintingNow')}
+                />
+              );
+            },
+          )}
         </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingOffice').toUpperCase()}
@@ -115,34 +118,26 @@ const HomeScreen = () => {
           }}
         />
         <CarouselSection>
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
+          {home?.printData?.printingOffice?.map(
+            ({
+              id,
+              title,
+              imageUrl,
+            }: {
+              id: number;
+              title: string;
+              imageUrl: string;
+            }) => {
+              return (
+                <ProductCard
+                  key={id}
+                  imageUrl={imageUrl}
+                  title={title}
+                  buttonTitle={t('labels.bookPrintingNow')}
+                />
+              );
+            },
+          )}
         </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingMedia').toUpperCase()}
@@ -151,34 +146,26 @@ const HomeScreen = () => {
           }}
         />
         <CarouselSection>
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
+          {home?.printData?.printingMedia?.map(
+            ({
+              id,
+              title,
+              imageUrl,
+            }: {
+              id: number;
+              title: string;
+              imageUrl: string;
+            }) => {
+              return (
+                <ProductCard
+                  key={id}
+                  imageUrl={imageUrl}
+                  title={title}
+                  buttonTitle={t('labels.bookPrintingNow')}
+                />
+              );
+            },
+          )}
         </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingPackaging').toUpperCase()}
@@ -187,34 +174,26 @@ const HomeScreen = () => {
           }}
         />
         <CarouselSection>
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
+          {home?.printData?.printingPackaging?.map(
+            ({
+              id,
+              title,
+              imageUrl,
+            }: {
+              id: number;
+              title: string;
+              imageUrl: string;
+            }) => {
+              return (
+                <ProductCard
+                  key={id}
+                  imageUrl={imageUrl}
+                  title={title}
+                  buttonTitle={t('labels.bookPrintingNow')}
+                />
+              );
+            },
+          )}
         </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingTetCalendar').toUpperCase()}
@@ -223,34 +202,26 @@ const HomeScreen = () => {
           }}
         />
         <CarouselSection>
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
+          {home?.printData?.printingTetCalendar?.map(
+            ({
+              id,
+              title,
+              imageUrl,
+            }: {
+              id: number;
+              title: string;
+              imageUrl: string;
+            }) => {
+              return (
+                <ProductCard
+                  key={id}
+                  imageUrl={imageUrl}
+                  title={title}
+                  buttonTitle={t('labels.bookPrintingNow')}
+                />
+              );
+            },
+          )}
         </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingAdvertising').toUpperCase()}
@@ -259,34 +230,26 @@ const HomeScreen = () => {
           }}
         />
         <CarouselSection>
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
+          {home?.printData?.printingAdvertising?.map(
+            ({
+              id,
+              title,
+              imageUrl,
+            }: {
+              id: number;
+              title: string;
+              imageUrl: string;
+            }) => {
+              return (
+                <ProductCard
+                  key={id}
+                  imageUrl={imageUrl}
+                  title={title}
+                  buttonTitle={t('labels.bookPrintingNow')}
+                />
+              );
+            },
+          )}
         </CarouselSection>
         <CarouselSectionHeader
           title={t('labels.printingOther').toUpperCase()}
@@ -295,34 +258,26 @@ const HomeScreen = () => {
           }}
         />
         <CarouselSection>
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu lịch để bàn năm 2023'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'In ấn mẫu Bloc lịch 20x30cm năm 2023 haha hihi'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
-          <ProductCard
-            imageUrl={
-              'https://inanbinhduong.vn/Content/images/products/VP00/VP01/VP01004/in-phong-bi-a4-1st-202205031410.jpg'
-            }
-            title={'Phong bi giay Kraft'}
-            buttonTitle={t('labels.bookPrintingNow')}
-          />
+          {home?.printData?.printingOther?.map(
+            ({
+              id,
+              title,
+              imageUrl,
+            }: {
+              id: number;
+              title: string;
+              imageUrl: string;
+            }) => {
+              return (
+                <ProductCard
+                  key={id}
+                  imageUrl={imageUrl}
+                  title={title}
+                  buttonTitle={t('labels.bookPrintingNow')}
+                />
+              );
+            },
+          )}
         </CarouselSection>
         <Spacer top={spacing.medium} />
         <View style={styles.newsSectionContainer}>
